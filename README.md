@@ -63,10 +63,6 @@ Open [http://localhost:3000](http://localhost:3000) (or the port indicated in th
 
 This project is configured for easy deployment on [Vercel](https://vercel.com/), the creators of Next.js. Connect your GitHub repository to Vercel to deploy automatically.
 
-## ⚠️ Known Issues
-
-*   **React Hydration Warning:** A persistent warning related to `<html>` tag attributes appears in the browser console during development. This seems related to the `ThemeProvider` (`next-themes`) interaction with server rendering. While standard fixes were attempted, the warning remains. The application appears functional, but further investigation might be needed if visual inconsistencies arise.
-
 ## 📄 Schema
 
 A basic SQL schema definition for a `users` table can be found in `schema.sql`. This is a starting point and would need expansion for a full backend implementation.
