@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 60% 95%;
+    --foreground: 260 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 15%;
+
+    --primary: 260 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 47 100% 96%;
+    --secondary-foreground: 260 10% 15%;
+
+    --muted: 260 20% 90%;
+    --muted-foreground: 260 10% 40%;
+
+    --accent: 260 40% 70%;
+    --accent-foreground: 260 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 20% 85%;
+    --input: 260 20% 85%;
+    --ring: 260 60% 50%;
+
+    --radius: 1.5rem;
+  }
+
+  .dark {
+    --background: 260 30% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 260 30% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 260 30% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 260 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 47 80% 90%;
+    --secondary-foreground: 260 10% 15%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 260 40% 30%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 260 20% 30%;
+    --input: 260 20% 30%;
+    --ring: 260 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Card animations */
+.card-float {
+  transform: translateY(0);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-float:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-rotate {
+  transition: transform 0.5s ease;
+}
+
+.card-rotate:hover {
+  transform: rotate3d(1, 1, 0, 15deg);
+}
+
+.card-scale {
+  transition: transform 0.3s ease;
+}
+
+.card-scale:hover {
+  transform: scale(1.05);
+}
+
+.card-tilt {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+.card-flip {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-flip:hover {
+  transform: rotateY(180deg);
+}
+
+.card-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 15px 5px rgba(149, 128, 255, 0.6);
+}
+
+.card-shake {
+  transition: transform 0.3s ease;
+}
+
+.card-shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.card-pulse {
+  transition: transform 0.3s ease;
+}
+
+.card-pulse:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.card-3d-rotate {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d-rotate:hover {
+  transform: rotate3d(0.5, 1, 0, 20deg);
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-slow {
+  animation: floating-slow 5s ease-in-out infinite;
+}
+
+@keyframes floating-slow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.floating-rotate {
+  animation: floating-rotate 7s ease-in-out infinite;
+}
+
+@keyframes floating-rotate {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
